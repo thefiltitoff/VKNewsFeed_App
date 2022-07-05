@@ -16,6 +16,7 @@
 		2B9F46FA287489310096AB57 /* NewsFeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B9F46F9287489310096AB57 /* NewsFeedViewController.storyboard */; };
 		2B9F46FF287494A20096AB57 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F46FE287494A20096AB57 /* NewsFeedTableViewCell.swift */; };
 		2B9F4701287494D20096AB57 /* NewsFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9F4700287494D20096AB57 /* NewsFeedTableViewCell.xib */; };
+		2B9F47042874D96E0096AB57 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F47032874D96E0096AB57 /* WebImageView.swift */; };
 		2BB974F22873898A00092C30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB974F12873898A00092C30 /* AppDelegate.swift */; };
 		2BB974F42873898A00092C30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB974F32873898A00092C30 /* SceneDelegate.swift */; };
 		2BB974F62873898A00092C30 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB974F52873898A00092C30 /* AuthViewController.swift */; };
@@ -41,6 +42,7 @@
 		2B9F46F9287489310096AB57 /* NewsFeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsFeedViewController.storyboard; sourceTree = "<group>"; };
 		2B9F46FE287494A20096AB57 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
 		2B9F4700287494D20096AB57 /* NewsFeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFeedTableViewCell.xib; sourceTree = "<group>"; };
+		2B9F47032874D96E0096AB57 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		2BB974EE2873898A00092C30 /* VKNewsFeed_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKNewsFeed_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB974F12873898A00092C30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BB974F32873898A00092C30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		2B9F47022874D9540096AB57 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2B9F47032874D96E0096AB57 /* WebImageView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2BB974E52873898A00092C30 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +141,7 @@
 				2B9F46EA287482710096AB57 /* NewsFeed */,
 				2BB975072873903C00092C30 /* Services */,
 				2BB97516287468F700092C30 /* Extensions */,
+				2B9F47022874D9540096AB57 /* Helpers */,
 				2BB974FA2873898C00092C30 /* Assets.xcassets */,
 				2BB974FC2873898C00092C30 /* LaunchScreen.storyboard */,
 				2BB974FF2873898C00092C30 /* Info.plist */,
@@ -302,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BB974F62873898A00092C30 /* AuthViewController.swift in Sources */,
+				2B9F47042874D96E0096AB57 /* WebImageView.swift in Sources */,
 				2B9F46F4287482980096AB57 /* NewsFeedRouter.swift in Sources */,
 				2B9F46F5287482980096AB57 /* NewsFeedModels.swift in Sources */,
 				2BB974F22873898A00092C30 /* AppDelegate.swift in Sources */,
