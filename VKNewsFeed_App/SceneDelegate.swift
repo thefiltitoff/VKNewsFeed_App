@@ -26,14 +26,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        authService = AuthService()
+        self.authService = AuthService()
         authService.delegate = self
         
-        let authVC = UIStoryboard(name: "AuthViewController", bundle: nil).instantiateInitialViewController() as? AuthViewController
+        let authVC: AuthViewController = AuthViewController.loadFromStoryboard()
+        
         window?.rootViewController = authVC
         window?.makeKeyAndVisible()
-        
-        
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -75,23 +74,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 //MARK: - AuthServiceDelegate
 extension SceneDelegate: AuthServiceDelegate {
-    func authServiceShouldShow(viewController: UIViewController) {
+    func authServiceShouldShow(_ viewController: UIViewController) {
         print(#function)
-        window?.rootViewController?.present(viewController, animated: true)
+        window?.rootViewController?.present(viewController, animated: true, completion: nil)
     }
     
     func authServiceSignIn() {
         print(#function)
-        let feedVC = UIStoryboard(name: "FeedViewController", bundle: nil).instantiateInitialViewController() as! FeedViewController
-        let navigationController = UINavigationController(rootViewController: feedVC)
-
-        window?.rootViewController = navigationController
-        
+        let feedVC: FeedViewController = FeedViewController.loadFromStoryboard()
+        let navVC = UINavigationController(rootViewController: feedVC)
+        window?.rootViewController = navVC
     }
     
-    func authServiceSignInDidFail() {
+    func authServiceDidSignInFail() {
         print(#function)
     }
-    
-    
 }
