@@ -9,6 +9,18 @@
 
 import UIKit
 
+protocol FeedCellViewModel {
+    var iconURLString: String { get }
+    var name: String { get }
+    var date: String { get }
+    var text: String? { get }
+    var likes: String? { get }
+    var comments: String? { get }
+    var shares: String? { get }
+    var views: String? { get }
+    
+}
+
 class NewsFeedTableViewCell: UITableViewCell {
     static let reuseID = "NewsFeedTableViewCell"
     
@@ -27,10 +39,14 @@ class NewsFeedTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func set(viewModel: FeedCellViewModel) {
+        nameLabel.text = viewModel.name
+        dateLabel.text = viewModel.date
+        postLabel.text = viewModel.text
+        likesLabel.text = viewModel.likes
+        commentsLabel.text = viewModel.comments
+        sharesLabel.text = viewModel.shares
+        viewsLabel.text = viewModel.views
     }
 
 }
