@@ -19,6 +19,8 @@
 		2BB975132874574100092C30 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB975122874574100092C30 /* NetworkService.swift */; };
 		2BB975152874597600092C30 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB975142874597600092C30 /* API.swift */; };
 		2BB975182874691900092C30 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB975172874691900092C30 /* Extension + UIViewController.swift */; };
+		2BB9751B2874751D00092C30 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9751A2874751D00092C30 /* FeedResponse.swift */; };
+		2BB9751D2874779700092C30 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9751C2874779700092C30 /* NetworkDataFetcher.swift */; };
 		687A04D1F01ED82D829A2F85 /* Pods_VKNewsFeed_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4648B5395AC9BD041EDE7217 /* Pods_VKNewsFeed_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		2BB975122874574100092C30 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2BB975142874597600092C30 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		2BB975172874691900092C30 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
+		2BB9751A2874751D00092C30 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
+		2BB9751C2874779700092C30 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		4648B5395AC9BD041EDE7217 /* Pods_VKNewsFeed_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKNewsFeed_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B2CECE7F982226B48AE760 /* Pods-VKNewsFeed_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKNewsFeed_App.release.xcconfig"; path = "Target Support Files/Pods-VKNewsFeed_App/Pods-VKNewsFeed_App.release.xcconfig"; sourceTree = "<group>"; };
 		6C284C28DF358FA9C8B10C83 /* Pods-VKNewsFeed_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKNewsFeed_App.debug.xcconfig"; path = "Target Support Files/Pods-VKNewsFeed_App/Pods-VKNewsFeed_App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,9 +103,11 @@
 		2BB975072873903C00092C30 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2BB975192874750F00092C30 /* Models */,
 				2BB975052873903500092C30 /* AuthService.swift */,
 				2BB975122874574100092C30 /* NetworkService.swift */,
 				2BB975142874597600092C30 /* API.swift */,
+				2BB9751C2874779700092C30 /* NetworkDataFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -130,6 +136,14 @@
 				2BB975172874691900092C30 /* Extension + UIViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2BB975192874750F00092C30 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2BB9751A2874751D00092C30 /* FeedResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8E6E541360E24D203B5AD583 /* Pods */ = {
@@ -261,9 +275,11 @@
 				2BB974F22873898A00092C30 /* AppDelegate.swift in Sources */,
 				2BB975182874691900092C30 /* Extension + UIViewController.swift in Sources */,
 				2BB9750D287450EC00092C30 /* FeedViewController.swift in Sources */,
+				2BB9751D2874779700092C30 /* NetworkDataFetcher.swift in Sources */,
 				2BB974F42873898A00092C30 /* SceneDelegate.swift in Sources */,
 				2BB975132874574100092C30 /* NetworkService.swift in Sources */,
 				2BB975062873903500092C30 /* AuthService.swift in Sources */,
+				2BB9751B2874751D00092C30 /* FeedResponse.swift in Sources */,
 				2BB975152874597600092C30 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
