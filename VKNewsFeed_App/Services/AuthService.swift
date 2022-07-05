@@ -23,6 +23,9 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     private let vkSDK: VKSdk
     
     weak var delegate: AuthServiceDelegate?
+    var token: String? {
+        return VKSdk.accessToken().accessToken
+    }
     
     override init() {
         VKSdk.forceLogout()
