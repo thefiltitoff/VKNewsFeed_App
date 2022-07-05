@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		2BB974F22873898A00092C30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB974F12873898A00092C30 /* AppDelegate.swift */; };
 		2BB974F42873898A00092C30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB974F32873898A00092C30 /* SceneDelegate.swift */; };
-		2BB974F62873898A00092C30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB974F52873898A00092C30 /* ViewController.swift */; };
-		2BB974F92873898A00092C30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB974F72873898A00092C30 /* Main.storyboard */; };
+		2BB974F62873898A00092C30 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB974F52873898A00092C30 /* AuthViewController.swift */; };
 		2BB974FB2873898C00092C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BB974FA2873898C00092C30 /* Assets.xcassets */; };
 		2BB974FE2873898C00092C30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB974FC2873898C00092C30 /* LaunchScreen.storyboard */; };
+		2BB975062873903500092C30 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB975052873903500092C30 /* AuthService.swift */; };
+		2BB9750B28743EF000092C30 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9750A28743EF000092C30 /* AuthViewController.storyboard */; };
+		2BB9750D287450EC00092C30 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9750C287450EC00092C30 /* FeedViewController.swift */; };
+		2BB9750F2874510900092C30 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9750E2874510900092C30 /* FeedViewController.storyboard */; };
 		687A04D1F01ED82D829A2F85 /* Pods_VKNewsFeed_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4648B5395AC9BD041EDE7217 /* Pods_VKNewsFeed_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +23,14 @@
 		2BB974EE2873898A00092C30 /* VKNewsFeed_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKNewsFeed_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB974F12873898A00092C30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BB974F32873898A00092C30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2BB974F52873898A00092C30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2BB974F82873898A00092C30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BB974F52873898A00092C30 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		2BB974FA2873898C00092C30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BB974FD2873898C00092C30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BB974FF2873898C00092C30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BB975052873903500092C30 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		2BB9750A28743EF000092C30 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
+		2BB9750C287450EC00092C30 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		2BB9750E2874510900092C30 /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
 		4648B5395AC9BD041EDE7217 /* Pods_VKNewsFeed_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKNewsFeed_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B2CECE7F982226B48AE760 /* Pods-VKNewsFeed_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKNewsFeed_App.release.xcconfig"; path = "Target Support Files/Pods-VKNewsFeed_App/Pods-VKNewsFeed_App.release.xcconfig"; sourceTree = "<group>"; };
 		6C284C28DF358FA9C8B10C83 /* Pods-VKNewsFeed_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKNewsFeed_App.debug.xcconfig"; path = "Target Support Files/Pods-VKNewsFeed_App/Pods-VKNewsFeed_App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,13 +79,40 @@
 			children = (
 				2BB974F12873898A00092C30 /* AppDelegate.swift */,
 				2BB974F32873898A00092C30 /* SceneDelegate.swift */,
-				2BB974F52873898A00092C30 /* ViewController.swift */,
-				2BB974F72873898A00092C30 /* Main.storyboard */,
+				2BB975102874515400092C30 /* FeedViewController */,
+				2BB975072873903C00092C30 /* Services */,
+				2BB975112874516E00092C30 /* AuthViewController */,
 				2BB974FA2873898C00092C30 /* Assets.xcassets */,
 				2BB974FC2873898C00092C30 /* LaunchScreen.storyboard */,
 				2BB974FF2873898C00092C30 /* Info.plist */,
 			);
 			path = VKNewsFeed_App;
+			sourceTree = "<group>";
+		};
+		2BB975072873903C00092C30 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2BB975052873903500092C30 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2BB975102874515400092C30 /* FeedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BB9750C287450EC00092C30 /* FeedViewController.swift */,
+				2BB9750E2874510900092C30 /* FeedViewController.storyboard */,
+			);
+			path = FeedViewController;
+			sourceTree = "<group>";
+		};
+		2BB975112874516E00092C30 /* AuthViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BB974F52873898A00092C30 /* AuthViewController.swift */,
+				2BB9750A28743EF000092C30 /* AuthViewController.storyboard */,
+			);
+			path = AuthViewController;
 			sourceTree = "<group>";
 		};
 		8E6E541360E24D203B5AD583 /* Pods */ = {
@@ -88,7 +121,6 @@
 				6C284C28DF358FA9C8B10C83 /* Pods-VKNewsFeed_App.debug.xcconfig */,
 				55B2CECE7F982226B48AE760 /* Pods-VKNewsFeed_App.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,8 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BB974FE2873898C00092C30 /* LaunchScreen.storyboard in Resources */,
+				2BB9750B28743EF000092C30 /* AuthViewController.storyboard in Resources */,
 				2BB974FB2873898C00092C30 /* Assets.xcassets in Resources */,
-				2BB974F92873898A00092C30 /* Main.storyboard in Resources */,
+				2BB9750F2874510900092C30 /* FeedViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,23 +240,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BB974F62873898A00092C30 /* ViewController.swift in Sources */,
+				2BB974F62873898A00092C30 /* AuthViewController.swift in Sources */,
 				2BB974F22873898A00092C30 /* AppDelegate.swift in Sources */,
+				2BB9750D287450EC00092C30 /* FeedViewController.swift in Sources */,
 				2BB974F42873898A00092C30 /* SceneDelegate.swift in Sources */,
+				2BB975062873903500092C30 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2BB974F72873898A00092C30 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2BB974F82873898A00092C30 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2BB974FC2873898C00092C30 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,7 +389,6 @@
 				INFOPLIST_FILE = VKNewsFeed_App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -391,7 +417,6 @@
 				INFOPLIST_FILE = VKNewsFeed_App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
