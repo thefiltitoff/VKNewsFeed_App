@@ -125,12 +125,12 @@
 		2BB974F02873898A00092C30 /* VKNewsFeed_App */ = {
 			isa = PBXGroup;
 			children = (
-				2B9F46EA287482710096AB57 /* NewsFeed */,
-				2BB97516287468F700092C30 /* Extensions */,
 				2BB974F12873898A00092C30 /* AppDelegate.swift */,
 				2BB974F32873898A00092C30 /* SceneDelegate.swift */,
-				2BB975072873903C00092C30 /* Services */,
 				2BB975112874516E00092C30 /* AuthViewController */,
+				2B9F46EA287482710096AB57 /* NewsFeed */,
+				2BB975072873903C00092C30 /* Services */,
+				2BB97516287468F700092C30 /* Extensions */,
 				2BB974FA2873898C00092C30 /* Assets.xcassets */,
 				2BB974FC2873898C00092C30 /* LaunchScreen.storyboard */,
 				2BB974FF2873898C00092C30 /* Info.plist */,
