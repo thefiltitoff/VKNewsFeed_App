@@ -15,6 +15,8 @@
 		2B9F46F7287482980096AB57 /* NewsFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F46F0287482980096AB57 /* NewsFeedInteractor.swift */; };
 		2B9F46FA287489310096AB57 /* NewsFeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B9F46F9287489310096AB57 /* NewsFeedViewController.storyboard */; };
 		2B9F46FC287489A70096AB57 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B9F46FB287489A70096AB57 /* FeedViewController.storyboard */; };
+		2B9F46FF287494A20096AB57 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F46FE287494A20096AB57 /* NewsFeedTableViewCell.swift */; };
+		2B9F4701287494D20096AB57 /* NewsFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9F4700287494D20096AB57 /* NewsFeedTableViewCell.xib */; };
 		2BB974F22873898A00092C30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB974F12873898A00092C30 /* AppDelegate.swift */; };
 		2BB974F42873898A00092C30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB974F32873898A00092C30 /* SceneDelegate.swift */; };
 		2BB974F62873898A00092C30 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB974F52873898A00092C30 /* AuthViewController.swift */; };
@@ -40,6 +42,8 @@
 		2B9F46F0287482980096AB57 /* NewsFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedInteractor.swift; sourceTree = "<group>"; };
 		2B9F46F9287489310096AB57 /* NewsFeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsFeedViewController.storyboard; sourceTree = "<group>"; };
 		2B9F46FB287489A70096AB57 /* FeedViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FeedViewController.storyboard; path = ../../../../.Trash/FeedViewController.storyboard; sourceTree = "<group>"; };
+		2B9F46FE287494A20096AB57 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
+		2B9F4700287494D20096AB57 /* NewsFeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFeedTableViewCell.xib; sourceTree = "<group>"; };
 		2BB974EE2873898A00092C30 /* VKNewsFeed_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKNewsFeed_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB974F12873898A00092C30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BB974F32873898A00092C30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		2B9F46EA287482710096AB57 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				2B9F46FD287494830096AB57 /* Cell */,
 				2B9F46F9287489310096AB57 /* NewsFeedViewController.storyboard */,
 				2B9F46EF287482980096AB57 /* NewsFeedViewController.swift */,
 				2B9F46F0287482980096AB57 /* NewsFeedInteractor.swift */,
@@ -92,6 +97,15 @@
 				2B9F46ED287482980096AB57 /* NewsFeedRouter.swift */,
 			);
 			path = NewsFeed;
+			sourceTree = "<group>";
+		};
+		2B9F46FD287494830096AB57 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2B9F46FE287494A20096AB57 /* NewsFeedTableViewCell.swift */,
+				2B9F4700287494D20096AB57 /* NewsFeedTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		2BB974E52873898A00092C30 = {
@@ -246,6 +260,7 @@
 			files = (
 				2B9F46FA287489310096AB57 /* NewsFeedViewController.storyboard in Resources */,
 				2BB974FE2873898C00092C30 /* LaunchScreen.storyboard in Resources */,
+				2B9F4701287494D20096AB57 /* NewsFeedTableViewCell.xib in Resources */,
 				2B9F46FC287489A70096AB57 /* FeedViewController.storyboard in Resources */,
 				2BB9750B28743EF000092C30 /* AuthViewController.storyboard in Resources */,
 				2BB974FB2873898C00092C30 /* Assets.xcassets in Resources */,
@@ -308,6 +323,7 @@
 				2BB975182874691900092C30 /* Extension + UIViewController.swift in Sources */,
 				2BB9750D287450EC00092C30 /* FeedViewController.swift in Sources */,
 				2BB9751D2874779700092C30 /* NetworkDataFetcher.swift in Sources */,
+				2B9F46FF287494A20096AB57 /* NewsFeedTableViewCell.swift in Sources */,
 				2BB974F42873898A00092C30 /* SceneDelegate.swift in Sources */,
 				2BB975132874574100092C30 /* NetworkService.swift in Sources */,
 				2BB975062873903500092C30 /* AuthService.swift in Sources */,
