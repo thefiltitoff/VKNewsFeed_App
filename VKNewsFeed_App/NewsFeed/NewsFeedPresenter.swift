@@ -9,7 +9,7 @@
 import UIKit
 
 protocol NewsFeedPresentationLogic {
-  func presentData(response: NewsFeed.Model.Response.ResponseType)
+    func presentData(response: NewsFeed.Model.Response.ResponseType)
 }
 
 class NewsFeedPresenter: NewsFeedPresentationLogic {
@@ -20,21 +20,21 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
         return dt
     }()
     
-  weak var viewController: NewsFeedDisplayLogic?
-  
-  func presentData(response: NewsFeed.Model.Response.ResponseType) {
-      switch response {
-
-      case .presentNewsFeed(let feed):
-          let cells = feed.items.map { feedItem in
-              cellViewModel(from: feedItem, profiles: feed.profiles, groups: feed.groups)
-          }
-          
-          let feedViewModel = FeedViewModel(cells: cells)
-          viewController?.displayData(viewModel: .displayNewsFeed(feedViewModel: feedViewModel))
-      }
-  }
-  
+    weak var viewController: NewsFeedDisplayLogic?
+    
+    func presentData(response: NewsFeed.Model.Response.ResponseType) {
+        switch response {
+            
+        case .presentNewsFeed(let feed):
+            let cells = feed.items.map { feedItem in
+                cellViewModel(from: feedItem, profiles: feed.profiles, groups: feed.groups)
+            }
+            
+            let feedViewModel = FeedViewModel(cells: cells)
+            viewController?.displayData(viewModel: .displayNewsFeed(feedViewModel: feedViewModel))
+        }
+    }
+    
     private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group]) -> FeedViewModel.Cell {
         let profile = profile(for: feedItem.sourceId, profiles: profiles, groups: groups)
         let photoAttachment = self.photoAttachment(feedItem: feedItem)
@@ -65,9 +65,18 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
     }
     
     private func photoAttachment(feedItem: FeedItem) -> FeedViewModel.FeedCellPhotoAttachment? {
-        guard let photos = feedItem.attachments?.compactMap({ attachment in
+        if let photos = feedItem.attachments?.compactMap({ attachment in
             attachment.photo
-        }), let firstPhoto = photos.first else { return nil }
-        return FeedViewModel.FeedCellPhotoAttachment(photoUrlString: firstPhoto.srcBIG , height: firstPhoto.height, width: firstPhoto.width)
+        }), let firstPhoto = photos.first {
+            
+            return FeedViewModel.FeedCellPhotoAttachment(photoUrlString: firstPhoto.srcBIG , height: firstPhoto.height, width: firstPhoto.width)
+        } else if let photo = feedItem.attachments?.compactMap({ attachment in
+            attachment.link?.photo
+        }), let firstPhoto = photo.first {
+            return FeedViewModel.FeedCellPhotoAttachment(photoUrlString: firstPhoto.srcBIG , height: firstPhoto.height, width: firstPhoto.width)
+        } else {
+            return nil
+            
+        }
     }
 }
