@@ -17,11 +17,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLe-sh-dO4" userLabel="Card View">
-                        <rect key="frame" x="10" y="0.0" width="394" height="231"/>
+                        <rect key="frame" x="8" y="0.0" width="398" height="230"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWb-Ao-yR5" userLabel="Top View">
-                                <rect key="frame" x="8" y="5" width="378" height="38"/>
+                                <rect key="frame" x="8" y="8" width="382" height="36"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TEQ-AK-D0v" customClass="WebImageView" customModule="VKNewsFeed_App" customModuleProvider="target">
@@ -30,15 +30,14 @@
                                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deM-DW-dc9">
-                                        <rect key="frame" x="46" y="2" width="324" height="16"/>
+                                        <rect key="frame" x="46" y="2" width="328" height="16"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                        <color key="textColor" red="0.17254901960784313" green="0.1764705882352941" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkS-Hv-NYh">
-                                        <rect key="frame" x="46" y="20" width="324" height="16"/>
+                                        <rect key="frame" x="46" y="18" width="328" height="16"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -49,7 +48,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3Q-LZ-0ja" userLabel="Bottom View">
-                                <rect key="frame" x="0.0" y="187" width="394" height="44"/>
+                                <rect key="frame" x="0.0" y="186" width="398" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qkg-o7-syf">
@@ -89,7 +88,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aHl-pE-Xzi" customClass="WebImageView" customModule="VKNewsFeed_App" customModuleProvider="target">
-                                        <rect key="frame" x="314" y="0.0" width="80" height="44"/>
+                                        <rect key="frame" x="318" y="0.0" width="80" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="56K" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRl-PR-HfP">
@@ -128,7 +127,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyi-pd-UD4">
-                                <rect key="frame" x="8" y="51" width="378" height="54"/>
+                                <rect key="frame" x="8" y="52" width="382" height="53"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -136,7 +135,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rK6-am-9PR" customClass="WebImageView" customModule="VKNewsFeed_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113" width="394" height="66"/>
+                                <rect key="frame" x="0.0" y="110" width="398" height="68"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </imageView>
                         </subviews>
@@ -145,6 +144,7 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bottomView" destination="F3Q-LZ-0ja" id="Lz5-o0-mDy"/>
                 <outlet property="cardView" destination="TLe-sh-dO4" id="AK5-pn-47f"/>
                 <outlet property="commentsLabel" destination="Rzr-Np-QtW" id="3lO-Ms-F05"/>
                 <outlet property="dateLabel" destination="nkS-Hv-NYh" id="fS4-ro-Vqz"/>
