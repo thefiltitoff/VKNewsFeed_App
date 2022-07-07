@@ -34,6 +34,8 @@
 		2BB975182874691900092C30 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB975172874691900092C30 /* Extension + UIViewController.swift */; };
 		2BB9751B2874751D00092C30 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9751A2874751D00092C30 /* FeedResponse.swift */; };
 		2BB9751D2874779700092C30 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9751C2874779700092C30 /* NetworkDataFetcher.swift */; };
+		2BE866B22877666300412850 /* GalleryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE866B12877666300412850 /* GalleryCollectionView.swift */; };
+		2BE866B52877672F00412850 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE866B42877672F00412850 /* GalleryCollectionViewCell.swift */; };
 		687A04D1F01ED82D829A2F85 /* Pods_VKNewsFeed_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4648B5395AC9BD041EDE7217 /* Pods_VKNewsFeed_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		2BB975172874691900092C30 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
 		2BB9751A2874751D00092C30 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
 		2BB9751C2874779700092C30 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		2BE866B12877666300412850 /* GalleryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionView.swift; sourceTree = "<group>"; };
+		2BE866B42877672F00412850 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		4648B5395AC9BD041EDE7217 /* Pods_VKNewsFeed_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKNewsFeed_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B2CECE7F982226B48AE760 /* Pods-VKNewsFeed_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKNewsFeed_App.release.xcconfig"; path = "Target Support Files/Pods-VKNewsFeed_App/Pods-VKNewsFeed_App.release.xcconfig"; sourceTree = "<group>"; };
 		6C284C28DF358FA9C8B10C83 /* Pods-VKNewsFeed_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKNewsFeed_App.debug.xcconfig"; path = "Target Support Files/Pods-VKNewsFeed_App/Pods-VKNewsFeed_App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 		2B9F46EA287482710096AB57 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				2BE866B028774D2B00412850 /* GalleryView */,
 				2B9F46FD287494830096AB57 /* Cell */,
 				2B9F46F9287489310096AB57 /* NewsFeedViewController.storyboard */,
 				2B9F46EF287482980096AB57 /* NewsFeedViewController.swift */,
@@ -207,6 +212,23 @@
 				2BB9751A2874751D00092C30 /* FeedResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2BE866B028774D2B00412850 /* GalleryView */ = {
+			isa = PBXGroup;
+			children = (
+				2BE866B32877671D00412850 /* Cell */,
+				2BE866B12877666300412850 /* GalleryCollectionView.swift */,
+			);
+			path = GalleryView;
+			sourceTree = "<group>";
+		};
+		2BE866B32877671D00412850 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2BE866B42877672F00412850 /* GalleryCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8E6E541360E24D203B5AD583 /* Pods */ = {
@@ -336,7 +358,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BB974F62873898A00092C30 /* AuthViewController.swift in Sources */,
+				2BE866B52877672F00412850 /* GalleryCollectionViewCell.swift in Sources */,
 				2B916EE92876EAD7000C3A1C /* Constants.swift in Sources */,
+				2BE866B22877666300412850 /* GalleryCollectionView.swift in Sources */,
 				2B916EE72876DAAE000C3A1C /* Extension + UIView.swift in Sources */,
 				2B9F47042874D96E0096AB57 /* WebImageView.swift in Sources */,
 				2B9F46F4287482980096AB57 /* NewsFeedRouter.swift in Sources */,

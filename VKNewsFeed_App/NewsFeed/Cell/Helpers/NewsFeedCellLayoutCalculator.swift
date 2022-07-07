@@ -21,7 +21,7 @@ struct Sizes: FeedCellSizes {
 }
 
 protocol FeedCellLayoutCalculatorProtocol {
-    func sizes(postText: String?, photoAttachment: FeedCellPhotoAttachmentViewModel?, isFullSizedPost: Bool) -> FeedCellSizes
+    func sizes(postText: String?, photoAttachments: [FeedCellPhotoAttachmentViewModel], isFullSizedPost: Bool) -> FeedCellSizes
 }
 
 final class NewsFeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
@@ -32,7 +32,7 @@ final class NewsFeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
         self.screenWidth = screenWidth
     }
     
-    func sizes(postText: String?, photoAttachment: FeedCellPhotoAttachmentViewModel?, isFullSizedPost: Bool) -> FeedCellSizes {
+    func sizes(postText: String?, photoAttachments: [FeedCellPhotoAttachmentViewModel], isFullSizedPost: Bool) -> FeedCellSizes {
         var showMoreTextButton = false
         
         let cardViewWidth = screenWidth - Constants.cardInserts.left - Constants.cardInserts.right
@@ -77,9 +77,20 @@ final class NewsFeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
         
         var attachmentFrame = CGRect(origin: CGPoint(x: 0, y: attachmentTop), size: CGSize.zero)
         
-        if let photoAttachment = photoAttachment {
+//        if let photoAttachment = photoAttachment {
+//            let ratio = CGFloat(Float(photoAttachment.height) / Float(photoAttachment.width))
+//            attachmentFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
+//        }
+        
+        if let photoAttachment = photoAttachments.first {
             let ratio = CGFloat(Float(photoAttachment.height) / Float(photoAttachment.width))
             attachmentFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
+            if photoAttachments.count == 1 {
+                attachmentFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
+            } else if photoAttachments.count > 1 {
+               
+                attachmentFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
+            }
         }
         
         //MARK: - Work with bottomView

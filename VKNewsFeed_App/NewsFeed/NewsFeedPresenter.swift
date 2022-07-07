@@ -22,7 +22,7 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
     }()
     
     weak var viewController: NewsFeedDisplayLogic?
-   
+    
     var cellLayoutCalculator: FeedCellLayoutCalculatorProtocol = NewsFeedCellLayoutCalculator()
     
     func presentData(response: NewsFeed.Model.Response.ResponseType) {
@@ -40,7 +40,9 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
     
     private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group], revealPostIds: [Int]) -> FeedViewModel.Cell {
         let profile = profile(for: feedItem.sourceId, profiles: profiles, groups: groups)
-        let photoAttachment = self.photoAttachment(feedItem: feedItem)
+        let photoAttachments = self.photoAttachments(feedItem: feedItem)
+        
+        
         let date = Date(timeIntervalSince1970: feedItem.date)
         let dateTitle = dateFormatter.string(from: date)
         
@@ -48,7 +50,7 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
             postID == feedItem.postId
         }
         
-        let sizes = cellLayoutCalculator.sizes(postText: feedItem.text, photoAttachment: photoAttachment, isFullSizedPost: isFullSized)
+        let sizes = cellLayoutCalculator.sizes(postText: feedItem.text, photoAttachments: photoAttachments, isFullSizedPost: isFullSized)
         
         return FeedViewModel.Cell(
             postId: feedItem.postId,
@@ -60,7 +62,7 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
             comments: String(feedItem.comments?.count ?? 0),
             shares: String(feedItem.reposts?.count ?? 0),
             views: String(feedItem.views?.count ?? 0),
-            photoAttachment: photoAttachment,
+            photoAttachments: photoAttachments,
             sizes: sizes
         )
     }
@@ -75,6 +77,7 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
         return profileRepresentable!
     }
     
+    //Declared
     private func photoAttachment(feedItem: FeedItem) -> FeedViewModel.FeedCellPhotoAttachment? {
         if let photos = feedItem.attachments?.compactMap({ attachment in
             attachment.photo
@@ -87,6 +90,31 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
             return FeedViewModel.FeedCellPhotoAttachment(photoUrlString: firstPhoto.srcBIG , height: firstPhoto.height, width: firstPhoto.width)
         } else {
             return nil
+            
+        }
+    }
+    
+    private func photoAttachments(feedItem: FeedItem) -> [FeedViewModel.FeedCellPhotoAttachment] {
+        if let attachments = feedItem.attachments {
+            return attachments.compactMap { attachment -> FeedViewModel.FeedCellPhotoAttachment? in
+                guard let photo = attachment.photo else { return nil }
+                return FeedViewModel.FeedCellPhotoAttachment(
+                    photoUrlString: photo.srcBIG ,
+                    height: photo.height,
+                    width: photo.width
+                )
+            }
+        } else if let attachments = feedItem.attachments {
+            return attachments.compactMap { attachment -> FeedViewModel.FeedCellPhotoAttachment? in
+                guard let photo = attachment.link?.photo else { return nil }
+                return FeedViewModel.FeedCellPhotoAttachment(
+                    photoUrlString: photo.srcBIG ,
+                    height: photo.height,
+                    width: photo.width
+                )
+            }
+        } else {
+            return []
             
         }
     }
