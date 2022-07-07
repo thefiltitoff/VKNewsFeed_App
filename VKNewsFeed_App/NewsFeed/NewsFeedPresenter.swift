@@ -28,9 +28,9 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
     func presentData(response: NewsFeed.Model.Response.ResponseType) {
         switch response {
             
-        case .presentNewsFeed(let feed):
+        case .presentNewsFeed(let feed, let revealPostIds):
             let cells = feed.items.map { feedItem in
-                cellViewModel(from: feedItem, profiles: feed.profiles, groups: feed.groups)
+                cellViewModel(from: feedItem, profiles: feed.profiles, groups: feed.groups, revealPostIds: revealPostIds)
             }
             
             let feedViewModel = FeedViewModel(cells: cells)
@@ -38,15 +38,20 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
         }
     }
     
-    private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group]) -> FeedViewModel.Cell {
+    private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group], revealPostIds: [Int]) -> FeedViewModel.Cell {
         let profile = profile(for: feedItem.sourceId, profiles: profiles, groups: groups)
         let photoAttachment = self.photoAttachment(feedItem: feedItem)
         let date = Date(timeIntervalSince1970: feedItem.date)
         let dateTitle = dateFormatter.string(from: date)
         
-        let sizes = cellLayoutCalculator.sizes(postText: feedItem.text, photoAttachment: photoAttachment)
+        let isFullSized = revealPostIds.contains { postID in
+            postID == feedItem.postId
+        }
+        
+        let sizes = cellLayoutCalculator.sizes(postText: feedItem.text, photoAttachment: photoAttachment, isFullSizedPost: isFullSized)
         
         return FeedViewModel.Cell(
+            postId: feedItem.postId,
             iconURLString: profile.photo,
             name: profile.name,
             date: dateTitle,
