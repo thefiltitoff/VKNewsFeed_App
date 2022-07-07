@@ -96,7 +96,7 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
     
     private func photoAttachments(feedItem: FeedItem) -> [FeedViewModel.FeedCellPhotoAttachment] {
         if let attachments = feedItem.attachments {
-            return attachments.compactMap { attachment -> FeedViewModel.FeedCellPhotoAttachment? in
+            var photos = attachments.compactMap { attachment -> FeedViewModel.FeedCellPhotoAttachment? in
                 guard let photo = attachment.photo else { return nil }
                 return FeedViewModel.FeedCellPhotoAttachment(
                     photoUrlString: photo.srcBIG ,
@@ -104,18 +104,21 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
                     width: photo.width
                 )
             }
-        } else if let attachments = feedItem.attachments {
-            return attachments.compactMap { attachment -> FeedViewModel.FeedCellPhotoAttachment? in
-                guard let photo = attachment.link?.photo else { return nil }
-                return FeedViewModel.FeedCellPhotoAttachment(
-                    photoUrlString: photo.srcBIG ,
-                    height: photo.height,
-                    width: photo.width
-                )
-            }
-        } else {
-            return []
             
+            if photos.isEmpty {
+                photos = attachments.compactMap { attachment -> FeedViewModel.FeedCellPhotoAttachment? in
+                    guard let photo = attachment.link?.photo else { return nil }
+                    return FeedViewModel.FeedCellPhotoAttachment(
+                        photoUrlString: photo.srcBIG ,
+                        height: photo.height,
+                        width: photo.width
+                    )
+                }
+            }
+            return photos
+            
+        }  else {
+            return []
         }
     }
 }
