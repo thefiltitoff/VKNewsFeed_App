@@ -16,8 +16,10 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
     
     var interactor: NewsFeedBusinessLogic?
     var router: (NSObjectProtocol & NewsFeedRoutingLogic)?
-    private var feedViewModel = FeedViewModel(cells: [])
+    
+    private var feedViewModel = FeedViewModel(cells: [], footerTitle: nil)
     private var titleView = TitleView()
+    private lazy var footerView = FooterView()
     
     private var refreshControll: UIRefreshControl = {
         let refreshControll = UIRefreshControl()
@@ -68,6 +70,7 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
         table.backgroundColor = .clear
         
         table.addSubview(refreshControll)
+        table.tableFooterView = footerView
     }
     
     private func setupTopBars() {
@@ -82,16 +85,22 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
             
         case .displayNewsFeed(let feedViewModel):
             self.feedViewModel = feedViewModel
+            footerView.setTitle(feedViewModel.footerTitle)
             table.reloadData()
             refreshControll.endRefreshing()
+
         case .displayUser(userViewModel: let userViewModel):
             titleView.set(userViewModel: userViewModel)
+        case .displayFooterLoader:
+            footerView.showLoader()
+            
         }
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if scrollView.contentOffset.y > scrollView.contentSize.height / 1.1 {
             interactor?.makeRequest(request: .getNextBatch)
+            
         }
     }
     
