@@ -22,7 +22,7 @@ final class NewsFeedCodeTableViewCell: UITableViewCell {
     //MARK: - First layer's prooperties
     let cardView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .secondarySystemBackground
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

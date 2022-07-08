@@ -9,44 +9,39 @@
 import UIKit
 
 protocol NewsFeedBusinessLogic {
-  func makeRequest(request: NewsFeed.Model.Request.RequestType)
+    func makeRequest(request: NewsFeed.Model.Request.RequestType)
 }
 
 class NewsFeedInteractor: NewsFeedBusinessLogic {
-
-  var presenter: NewsFeedPresentationLogic?
-  var service: NewsFeedService?
     
-    private var revealedPostIds = [Int]()
-    private var feedResponse: FeedResponse?
+    var presenter: NewsFeedPresentationLogic?
+    var service: NewsFeedService?
     
-    private var fetcher: DataFetcher = NetworkDataFetcher(networking: NetworkService())
-  
-  func makeRequest(request: NewsFeed.Model.Request.RequestType) {
-    if service == nil {
-      service = NewsFeedService()
+    func makeRequest(request: NewsFeed.Model.Request.RequestType) {
+        if service == nil {
+            service = NewsFeedService()
+        }
+        
+        switch request {
+            
+        case .getNewsFeed:
+            service?.getFeed(completion: { [weak self] revealedPostIds, feed in
+                self?.presenter?.presentData(response: .presentNewsFeed(feed: feed, revealedPostIds: revealedPostIds))
+            })
+        case .getUser:
+            service?.getUser(completion: { [weak self] user in
+                self?.presenter?.presentData(response: .presentUserInfo(user: user))
+            })
+        case .revealPostsId(postId: let postId):
+            service?.revealedPostIds(forPostIds: postId, completion: { [weak self] revealedPostIds, feed in
+                self?.presenter?.presentData(response: .presentNewsFeed(feed: feed, revealedPostIds: revealedPostIds))
+            })
+        case .getNextBatch:
+            print("Hello there!")
+            service?.getNextBatch(completion: { revealedPostIds, feed in
+                self.presenter?.presentData(response: .presentNewsFeed(feed: feed, revealedPostIds: revealedPostIds))
+            })
+        }
+        
     }
-      
-      switch request {
-          
-      case .getNewsFeed :
-          fetcher.getFeed { [weak self] feedResponse in
-              self?.feedResponse = feedResponse
-              self?.presentFeed()
-          }
-      case .revealPostsId(postId: let postId):
-          revealedPostIds.append(postId)
-          presentFeed()
-      case .getUser:
-          fetcher.getUser { userResponse in
-              self.presenter?.presentData(response: .presentUserInfo(user: userResponse))
-          }
-      }
-  }
-    
-    private func presentFeed() {
-        guard let feedResponse = feedResponse else { return  }
-        presenter?.presentData(response: .presentNewsFeed(feed: feedResponse, revealedPostIds: revealedPostIds))
-    }
-  
 }

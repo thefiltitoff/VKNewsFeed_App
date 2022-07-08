@@ -51,7 +51,7 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
         
         setupTable()
         
-        view.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        view.backgroundColor = .systemBackground
         interactor?.makeRequest(request: .getNewsFeed)
         interactor?.makeRequest(request: .getUser)
     }
@@ -89,8 +89,13 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
         }
     }
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView.contentOffset.y > scrollView.contentSize.height / 1.1 {
+            interactor?.makeRequest(request: .getNextBatch)
+        }
+    }
+    
     @objc private func refresh() {
-        print("Hello there!")
         interactor?.makeRequest(request: .getNewsFeed)
     }
     
