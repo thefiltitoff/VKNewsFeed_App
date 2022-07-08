@@ -38,11 +38,11 @@
                                     <action selector="signInButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="F9G-mu-aj1"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_vk_logo_nb" translatesAutoresizingMaskIntoConstraints="NO" id="tfk-g8-FcT">
-                                <rect key="frame" x="85" y="209" width="150" height="150"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk_logo" translatesAutoresizingMaskIntoConstraints="NO" id="tfk-g8-FcT">
+                                <rect key="frame" x="110" y="234" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="DDY-kp-rgM"/>
-                                    <constraint firstAttribute="width" constant="150" id="Rq7-FV-UCF"/>
+                                    <constraint firstAttribute="height" constant="100" id="DDY-kp-rgM"/>
+                                    <constraint firstAttribute="width" constant="100" id="Rq7-FV-UCF"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -62,7 +62,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_vk_logo_nb" width="40" height="23"/>
+        <image name="vk_logo" width="392.5" height="397"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

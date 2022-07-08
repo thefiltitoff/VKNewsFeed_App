@@ -19,6 +19,12 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
     private var feedViewModel = FeedViewModel(cells: [])
     private var titleView = TitleView()
     
+    private var refreshControll: UIRefreshControl = {
+        let refreshControll = UIRefreshControl()
+        refreshControll.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return refreshControll
+    }()
+    
     @IBOutlet weak var table: UITableView!
     
     // MARK: Setup
@@ -43,6 +49,16 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
         setup()
         setupTopBars()
         
+        setupTable()
+        
+        view.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        interactor?.makeRequest(request: .getNewsFeed)
+        interactor?.makeRequest(request: .getUser)
+    }
+    
+    private func setupTable() {
+        let topInset:CGFloat = 9
+        table.contentInset.top = topInset
         table.register(UINib(nibName: "NewsFeedTableViewCell", bundle: nil), forCellReuseIdentifier: NewsFeedTableViewCell.reuseID)
         table.register(
             NewsFeedCodeTableViewCell.self,
@@ -50,9 +66,8 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
         )
         table.separatorStyle = .none
         table.backgroundColor = .clear
-        view.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
-        interactor?.makeRequest(request: .getNewsFeed)
-        interactor?.makeRequest(request: .getUser)
+        
+        table.addSubview(refreshControll)
     }
     
     private func setupTopBars() {
@@ -68,16 +83,20 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
         case .displayNewsFeed(let feedViewModel):
             self.feedViewModel = feedViewModel
             table.reloadData()
+            refreshControll.endRefreshing()
         case .displayUser(userViewModel: let userViewModel):
             titleView.set(userViewModel: userViewModel)
         }
     }
     
-}
-
-extension NewsFeedViewController: UITableViewDelegate {
+    @objc private func refresh() {
+        print("Hello there!")
+        interactor?.makeRequest(request: .getNewsFeed)
+    }
     
 }
+
+extension NewsFeedViewController: UITableViewDelegate {}
 
 extension NewsFeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

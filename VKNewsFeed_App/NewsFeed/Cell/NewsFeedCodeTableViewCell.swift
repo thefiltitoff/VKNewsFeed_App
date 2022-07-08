@@ -34,10 +34,18 @@ final class NewsFeedCodeTableViewCell: UITableViewCell {
         return view
     }()
     
-    let postLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
+    let postLabel: UITextView = {
+        let label = UITextView()
+        let padding = label.textContainer.lineFragmentPadding
+        
+        label.isScrollEnabled = false
+        label.isSelectable = true
+        label.isUserInteractionEnabled = true
+        label.isEditable = false
+
+        label.dataDetectorTypes = UIDataDetectorTypes.all
         label.font = Constants.postLabelFont
+        label.textContainerInset = UIEdgeInsets(top: 0, left: -padding, bottom: 0, right: -padding)
         
         label.backgroundColor = .clear
         label.textColor = .label
@@ -234,7 +242,7 @@ final class NewsFeedCodeTableViewCell: UITableViewCell {
         topView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -8).isActive = true
         topView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 8).isActive = true
         topView.heightAnchor.constraint(equalToConstant: Constants.topViewHeight).isActive = true
-        
+
     }
     
     private func overlayThirdLayerOnTopView() {
