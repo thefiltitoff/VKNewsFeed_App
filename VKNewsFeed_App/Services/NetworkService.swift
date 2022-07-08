@@ -27,11 +27,9 @@ final class NetworkService: Networking {
         allParams["access_token"] = token
         allParams["v"] = API.version
         let url = self.url(from: path, params: allParams)
-        print(url)
         let request = URLRequest(url: url)
         let task = createDataTask(from: request, completion: completion)
         task.resume()
-        print(url)
     }
     
     private func createDataTask(from request: URLRequest, completion: @escaping (Data?, Error?) -> Void) -> URLSessionDataTask {

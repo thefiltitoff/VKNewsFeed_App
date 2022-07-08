@@ -23,7 +23,6 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
     
     private var refreshControll: UIRefreshControl = {
         let refreshControll = UIRefreshControl()
-        refreshControll.addTarget(self, action: #selector(refresh), for: .valueChanged)
         return refreshControll
     }()
     
@@ -56,6 +55,7 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
         view.backgroundColor = .systemBackground
         interactor?.makeRequest(request: .getNewsFeed)
         interactor?.makeRequest(request: .getUser)
+        refreshControll.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
     
     private func setupTable() {
@@ -74,10 +74,23 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
     }
     
     private func setupTopBars() {
+        if let window = UIApplication.shared.currentUIWindow(),
+            let statusBarFrame = window.windowScene?.statusBarManager?.statusBarFrame {
+            let topBar = UIView(frame: statusBarFrame)
+            topBar.backgroundColor = .systemBackground
+            topBar.layer.shadowColor = UIColor.gray.cgColor
+            topBar.layer.shadowOpacity = 0.3
+            topBar.layer.shadowOffset = CGSize.zero
+            topBar.layer.shadowRadius = 8
+            view.addSubview(topBar)
+        }
+        
         navigationController?.hidesBarsOnSwipe = true
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.backgroundColor = .systemBackground
         navigationItem.titleView = titleView
+        
     }
     
     func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData) {
