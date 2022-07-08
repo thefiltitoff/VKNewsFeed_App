@@ -161,6 +161,7 @@
 		2B9F47022874D9540096AB57 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2BB974FC2873898C00092C30 /* LaunchScreen.storyboard */,
 				2B9F47032874D96E0096AB57 /* WebImageView.swift */,
 				2BDA0F632878E7F2007EA675 /* GradientView.swift */,
 			);
@@ -188,17 +189,13 @@
 		2BB974F02873898A00092C30 /* VKNewsFeed_App */ = {
 			isa = PBXGroup;
 			children = (
-				2BB974F12873898A00092C30 /* AppDelegate.swift */,
-				2BB974F32873898A00092C30 /* SceneDelegate.swift */,
+				2BDA0F662878F3E5007EA675 /* App Supporting files */,
 				2BB975112874516E00092C30 /* AuthViewController */,
 				2B9F46EA287482710096AB57 /* NewsFeed */,
 				2BB975072873903C00092C30 /* Services */,
 				2BB97516287468F700092C30 /* Extensions */,
 				2B9F47022874D9540096AB57 /* Views */,
-				2BB974FA2873898C00092C30 /* Assets.xcassets */,
-				2BB974FC2873898C00092C30 /* LaunchScreen.storyboard */,
-				2BB974FF2873898C00092C30 /* Info.plist */,
-				2BDA0F5D2878DDEF007EA675 /* Localizable.stringsdict */,
+				2BDA0F652878F3AE007EA675 /* Resources */,
 			);
 			path = VKNewsFeed_App;
 			sourceTree = "<group>";
@@ -250,6 +247,25 @@
 				2BDA0F5B2878D6A7007EA675 /* FooterView.swift */,
 			);
 			path = "Footer View";
+			sourceTree = "<group>";
+		};
+		2BDA0F652878F3AE007EA675 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2BB974FA2873898C00092C30 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2BDA0F662878F3E5007EA675 /* App Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				2BB974F12873898A00092C30 /* AppDelegate.swift */,
+				2BB974F32873898A00092C30 /* SceneDelegate.swift */,
+				2BB974FF2873898C00092C30 /* Info.plist */,
+				2BDA0F5D2878DDEF007EA675 /* Localizable.stringsdict */,
+			);
+			path = "App Supporting files";
 			sourceTree = "<group>";
 		};
 		2BE866B028774D2B00412850 /* GalleryView */ = {
@@ -570,10 +586,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RB3BCBLCA6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VKNewsFeed_App/Info.plist;
+				INFOPLIST_FILE = "VKNewsFeed_App/App Supporting files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "VK News";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -599,10 +616,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RB3BCBLCA6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VKNewsFeed_App/Info.plist;
+				INFOPLIST_FILE = "VKNewsFeed_App/App Supporting files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "VK News";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
