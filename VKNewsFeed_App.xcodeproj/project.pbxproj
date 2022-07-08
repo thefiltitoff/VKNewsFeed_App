@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2B015CA328778AE7008758E7 /* RowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B015CA228778AE7008758E7 /* RowLayout.swift */; };
+		2B015CA62878247A008758E7 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B015CA52878247A008758E7 /* TitleView.swift */; };
+		2B015CA828782519008758E7 /* InsertableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B015CA728782519008758E7 /* InsertableTextField.swift */; };
+		2B015CAA28782D93008758E7 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B015CA928782D93008758E7 /* UserResponse.swift */; };
 		2B916EE028761E83000C3A1C /* NewsFeedCellLayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B916EDF28761E83000C3A1C /* NewsFeedCellLayoutCalculator.swift */; };
 		2B916EE328763B03000C3A1C /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B916EE228763B03000C3A1C /* Extension + String.swift */; };
 		2B916EE52876CF61000C3A1C /* NewsFeedCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B916EE42876CF61000C3A1C /* NewsFeedCodeTableViewCell.swift */; };
@@ -42,6 +45,9 @@
 
 /* Begin PBXFileReference section */
 		2B015CA228778AE7008758E7 /* RowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLayout.swift; sourceTree = "<group>"; };
+		2B015CA52878247A008758E7 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		2B015CA728782519008758E7 /* InsertableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertableTextField.swift; sourceTree = "<group>"; };
+		2B015CA928782D93008758E7 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		2B916EDF28761E83000C3A1C /* NewsFeedCellLayoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCellLayoutCalculator.swift; sourceTree = "<group>"; };
 		2B916EE228763B03000C3A1C /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
 		2B916EE42876CF61000C3A1C /* NewsFeedCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCodeTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,6 +102,15 @@
 				4648B5395AC9BD041EDE7217 /* Pods_VKNewsFeed_App.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2B015CA428782465008758E7 /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				2B015CA52878247A008758E7 /* TitleView.swift */,
+				2B015CA728782519008758E7 /* InsertableTextField.swift */,
+			);
+			path = TitleView;
 			sourceTree = "<group>";
 		};
 		2B916EE128762B10000C3A1C /* Helpers */ = {
@@ -212,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				2BB9751A2874751D00092C30 /* FeedResponse.swift */,
+				2B015CA928782D93008758E7 /* UserResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +235,7 @@
 		2BE866B028774D2B00412850 /* GalleryView */ = {
 			isa = PBXGroup;
 			children = (
+				2B015CA428782465008758E7 /* TitleView */,
 				2BE866B32877671D00412850 /* Cell */,
 				2BE866B12877666300412850 /* GalleryCollectionView.swift */,
 			);
@@ -370,7 +387,10 @@
 				2B9F46F5287482980096AB57 /* NewsFeedModels.swift in Sources */,
 				2B916EE028761E83000C3A1C /* NewsFeedCellLayoutCalculator.swift in Sources */,
 				2BB974F22873898A00092C30 /* AppDelegate.swift in Sources */,
+				2B015CA828782519008758E7 /* InsertableTextField.swift in Sources */,
+				2B015CAA28782D93008758E7 /* UserResponse.swift in Sources */,
 				2BB975182874691900092C30 /* Extension + UIViewController.swift in Sources */,
+				2B015CA62878247A008758E7 /* TitleView.swift in Sources */,
 				2BB9751D2874779700092C30 /* NetworkDataFetcher.swift in Sources */,
 				2B916EE328763B03000C3A1C /* Extension + String.swift in Sources */,
 				2B9F46FF287494A20096AB57 /* NewsFeedTableViewCell.swift in Sources */,
