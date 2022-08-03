@@ -35,10 +35,9 @@ Localized only in Russian.
 ### Open and scrolling
 <div align="center">
 
-![output](https://user-images.githubusercontent.com/56549889/182604956-1b7f4110-07c4-49a7-aef6-27576427b58c.gif)
+![output 7](https://user-images.githubusercontent.com/56549889/182606681-dc30c1aa-5b6f-42dc-89e4-202c5c5f75f6.gif)
 
-![output 2](https://user-images.githubusercontent.com/56549889/182605050-ee07f913-af66-471f-8270-60fc99fca023.gif)
-
+![output 8](https://user-images.githubusercontent.com/56549889/182607473-76e1ddac-cc62-4d56-b548-220a0a0e12cc.gif)
 
 </div>
 
@@ -57,6 +56,13 @@ Localized only in Russian.
 ![output 5](https://user-images.githubusercontent.com/56549889/182603922-d2222e5b-f2c8-4b3d-a613-4ed664391f38.gif)
 
 ![output 6](https://user-images.githubusercontent.com/56549889/182603945-e244fa3e-813c-4987-a6e0-751de0e95fd0.gif)
+
+</div>
+
+### iPadOS
+<div align="center">
+
+![ipad](https://user-images.githubusercontent.com/56549889/182607160-48439a79-066d-4080-9114-54e6281a4c9d.png)
 
 </div>
 
