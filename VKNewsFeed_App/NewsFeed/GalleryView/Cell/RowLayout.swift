@@ -19,13 +19,14 @@ class RowLayout: UICollectionViewLayout {
     weak var delegate: RowLayoutDelegate!
     
     static var numbersOfRows = 2
+    
     fileprivate var cellPadding: CGFloat = 8
     
     fileprivate var cache = [UICollectionViewLayoutAttributes]()
     
     fileprivate var contentWidth: CGFloat = 0
     
-    // константа
+    // Constant
     fileprivate var contentHeight: CGFloat {
         
         guard let collectionView = collectionView else { return 0 }

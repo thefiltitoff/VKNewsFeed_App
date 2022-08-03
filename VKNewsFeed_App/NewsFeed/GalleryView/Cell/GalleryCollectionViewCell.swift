@@ -26,7 +26,6 @@ class GalleryCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         addSubview(myImageView)
-       
         
         // myImageView
         myImageView.fillSuperview()
@@ -42,8 +41,10 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         myImageView.layer.masksToBounds = true
         myImageView.layer.cornerRadius = 10
+        
         self.layer.shadowRadius = 3
         layer.shadowOpacity = 0.4
         layer.shadowOffset = CGSize(width: 2.5, height: 4)
