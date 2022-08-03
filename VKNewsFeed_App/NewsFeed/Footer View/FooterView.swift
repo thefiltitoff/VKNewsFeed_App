@@ -11,7 +11,7 @@ import UIKit
 
 class FooterView: UIView {
     
-    private var myLabel: UILabel = {
+    private lazy var myLabel: UILabel = {
        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = #colorLiteral(red: 0.6919150949, green: 0.7063220143, blue: 0.7199969292, alpha: 1)
@@ -20,7 +20,7 @@ class FooterView: UIView {
         return label
     }()
     
-    private var myLoader: UIActivityIndicatorView = {
+    private lazy var myLoader: UIActivityIndicatorView = {
        let loader = UIActivityIndicatorView()
         loader.translatesAutoresizingMaskIntoConstraints = false
         loader.hidesWhenStopped = true

@@ -47,9 +47,9 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setup()
         setupTopBars()
-        
         setupTable()
         
         view.backgroundColor = .systemBackground
@@ -58,10 +58,15 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
         refreshControll.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     private func setupTable() {
         let topInset:CGFloat = 9
+        
         table.contentInset.top = topInset
-        table.register(UINib(nibName: "NewsFeedTableViewCell", bundle: nil), forCellReuseIdentifier: NewsFeedTableViewCell.reuseID)
         table.register(
             NewsFeedCodeTableViewCell.self,
             forCellReuseIdentifier: NewsFeedCodeTableViewCell.reuseIdentifier
@@ -131,7 +136,6 @@ extension NewsFeedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: NewsFeedTableViewCell.reuseID, for: indexPath) as! NewsFeedTableViewCell
         let cell = tableView.dequeueReusableCell(
             withIdentifier: NewsFeedCodeTableViewCell.reuseIdentifier,
             for: indexPath) as! NewsFeedCodeTableViewCell

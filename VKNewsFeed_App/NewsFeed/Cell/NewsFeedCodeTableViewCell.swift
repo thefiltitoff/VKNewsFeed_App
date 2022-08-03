@@ -13,6 +13,33 @@ protocol NewsfeedCodeCellDelegate: AnyObject {
     func revealPost(for cell: NewsFeedCodeTableViewCell)
 }
 
+protocol FeedCellViewModel {
+    var iconURLString: String { get }
+    var name: String { get }
+    var date: String { get }
+    var text: String? { get }
+    var likes: String? { get }
+    var comments: String? { get }
+    var shares: String? { get }
+    var views: String? { get }
+    var photoAttachments: [FeedCellPhotoAttachmentViewModel] { get }
+    var sizes: FeedCellSizes { get }
+}
+
+protocol FeedCellSizes {
+    var postLabelFrame: CGRect { get }
+    var attachmentFrame: CGRect { get }
+    var bottomView: CGRect { get }
+    var totalHeight: CGFloat { get }
+    var moreTextButtonFrame: CGRect { get }
+}
+
+protocol FeedCellPhotoAttachmentViewModel {
+    var photoUrlString: String? { get }
+    var height: Int { get }
+    var width: Int { get }
+}
+
 final class NewsFeedCodeTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "NewsFeedCodeTableViewCell"
