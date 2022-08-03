@@ -1,6 +1,6 @@
 # VKNewsFeed_App
 
-This application is created to wotk with VK SDK dor iOS. 📰📱 <br />
+This application is created with Clean Swift pattern to wotk with VK SDK dor iOS. 📰📱 <br />
 VK is the most popular social network in Russia. I used it's SDK for parsing News Feed in my app. <br />
 
 For posts with a lot of photos I used UICollectionView with custom layout and auto sizing cells in tableview.
@@ -35,9 +35,10 @@ Localized only in Russian.
 ### Open and scrolling
 <div align="center">
 
-![output](https://user-images.githubusercontent.com/56549889/182603150-341221dc-6adc-41f0-a7e1-9793f3b20d46.gif)
+![output](https://user-images.githubusercontent.com/56549889/182604956-1b7f4110-07c4-49a7-aef6-27576427b58c.gif)
 
-![output 2](https://user-images.githubusercontent.com/56549889/182603578-627b1329-a0c8-46dc-82b7-910aba1d0d24.gif)
+![output 2](https://user-images.githubusercontent.com/56549889/182605050-ee07f913-af66-471f-8270-60fc99fca023.gif)
+
 
 </div>
 
