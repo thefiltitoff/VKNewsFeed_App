@@ -1,6 +1,6 @@
 # VKNewsFeed_App
 
-This application is created with Clean Swift pattern to wotk with VK SDK dor iOS. 📰📱 <br />
+This application is created with Clean Swift pattern to work with VK SDK for iOS. 📰📱 <br />
 VK is the most popular social network in Russia. I used it's SDK for parsing News Feed in my app. <br />
 
 For posts with a lot of photos I used UICollectionView with custom layout and auto sizing cells in tableview.
